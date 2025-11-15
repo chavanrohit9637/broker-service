@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
@@ -11,6 +12,8 @@ import (
 type Config struct{}
 
 func (c Config) routes() http.Handler {
+
+	fmt.Println("routers are getting called..")
 	mux := chi.NewRouter()
 
 	mux.Use(cors.Handler(cors.Options{
